@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-require("dotenv").config({ path: "./config/config.env" });
+require("dotenv").config({ path: "./Config/Config.env" });
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
@@ -13,7 +13,7 @@ app.use(express.static("./public"));
 app.use(express.static("js"));
 app.use(express.static("css"));
 
-const { checkUserRoles } = require("./Middleware/auth");
+const { checkUserRoles } = require("./Middleware/Auth");
 
 //  Importing  routes
 const User = require("./Routers/user");
@@ -29,10 +29,10 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/user-register", (req, res) => {
-  res.sendFile("register.html", { root: "public" });
+  res.sendFile("Register.html", { root: "public" });
 });
 
-app.get("/", checkUserRoles(["user"]), (req, res) => {
+app.get("/home", checkUserRoles(["user"]), (req, res) => {
   res.sendFile("Home.html", { root: "public" });
 });
 

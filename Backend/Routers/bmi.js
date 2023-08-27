@@ -7,7 +7,7 @@ const {
   updateBmi,
   deleteBmi,
   getBmiData,
-} = require("../Contorllers/Bmi");
+} = require("../Contorllers/bmi");
 
 router.route("/bmi").post(checkUserRoles(["user"]), createBmiData);
 router.route("/update-bmi").put(checkUserRoles(["user"]), updateBmi);

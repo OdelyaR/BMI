@@ -24,15 +24,7 @@ updateSubmit.addEventListener("click", () => {
   }
 });
 
-// deleteSubmit.addEventListener("click", () => {
-//   const name = document.getElementById("deleteName").value;
-//   const index = data.findIndex((person) => person.name === name);
-//   if (index !== -1) {
-//     data.splice(index, 1);
-//     fetchDataFromBackend();
-//     deleteFormFields.reset();
-//   }
-// });
+
 
 function calculateBMI(weight, height) {
   return (weight / (height * height)).toFixed(2);
